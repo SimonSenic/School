@@ -23,4 +23,8 @@ public class Grades {
         return dsy;
     }
 
+    public double getAverage(){
+        return (pro+web+dsy)/3.0;
+    }
+
 }
