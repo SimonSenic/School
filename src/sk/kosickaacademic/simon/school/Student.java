@@ -14,7 +14,7 @@ public class Student {
     private Grades grades;
     private Date date;
     private int payout;
-    private Hobby[] hobby;
+    private Hobby[] hobby = new Hobby[5];
     private int countHobbies;
 
     public Student(String fName, String lastName, ClassName className, Grades grades, Date date){
@@ -39,13 +39,17 @@ public class Student {
             if(hobby[i] instanceof Book){
                 System.out.println(((Book)hobby[i]).getAuthor());
                 System.out.println(((Book)hobby[i]).getGenre());
+                System.out.println();
             }
             if(hobby[i] instanceof Movie){
                 System.out.println(((Movie)hobby[i]).getYear());
                 System.out.println(((Movie)hobby[i]).getDirector());
+                System.out.println();
             }
-            if(hobby[i] instanceof Game)
-                System.out.println(((Game)hobby[i]).getGenre());
+            if(hobby[i] instanceof Game){
+                System.out.println(((Game) hobby[i]).getGenre());
+                System.out.println();
+            }
         }
     }
 

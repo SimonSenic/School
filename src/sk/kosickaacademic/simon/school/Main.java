@@ -69,12 +69,13 @@ public class Main {
             if(currentMonth<month || (currentMonth==month && currentDay<day)) age--;
             System.out.println(std[i].getFirstName() +" " +std[i].getLastName() +" " +age);
         }
+        System.out.println();
     }
 
     private static void printStudents(Student[] std){
-        System.out.println();
         for(int i=0; i<std.length; i++)
             System.out.println(std[i].getFirstName() +" " +std[i].getLastName() +" " +std[i].getGrades().getAverage());
+        System.out.println();
     }
 
     public static void main(String[] args) {
