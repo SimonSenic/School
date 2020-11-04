@@ -4,6 +4,8 @@ import sk.kosickaacademic.simon.school.hobbies.Book;
 import sk.kosickaacademic.simon.school.hobbies.Game;
 import sk.kosickaacademic.simon.school.hobbies.Movie;
 import sk.kosickaacademic.simon.school.hobbies.Sport;
+import sk.kosickaacademic.simon.school.pets.Dog;
+import sk.kosickaacademic.simon.school.pets.Fish;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -69,12 +71,13 @@ public class Main {
             if(currentMonth<month || (currentMonth==month && currentDay<day)) age--;
             System.out.println(std[i].getFirstName() +" " +std[i].getLastName() +" " +age);
         }
+        System.out.println();
     }
 
     private static void printStudents(Student[] std){
-        System.out.println();
         for(int i=0; i<std.length; i++)
             System.out.println(std[i].getFirstName() +" " +std[i].getLastName() +" " +std[i].getGrades().getAverage());
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -98,20 +101,26 @@ public class Main {
         students[1].addHobby(s2);
 
         Game g1 = new Game("World of Warcraft", "MMORPG");
+        Fish f1 = new Fish("Fantail", 12);
         students[2].addHobby(g1);
+        students[2].addAnimal(f1);
+        students[2].printHobbies();
+        students[2].printAnimal();
 
         Movie m1 = new Movie("Interstellar", 2014, "Christopher Nolan");
         Movie m2 = new Movie("The Dark Knight", 2008, "Christopher Nolan");
         Movie m3 = new Movie("Lord of the Rings", 2001, "Peter Jackson");
         Movie m4 = new Movie("Terminator 2", 1991, "James Cameron");
         Movie m5 = new Movie("Troy", 2004, "Wolfgang Petersen");
+        Dog d1 = new Dog("Bob", "American Bulldog", 5);
         students[3].addHobby(m1);
         students[3].addHobby(m2);
         students[3].addHobby(m3);
         students[3].addHobby(m4);
         students[3].addHobby(m5);
+        students[3].addAnimal(d1);
         students[3].printHobbies();
-
+        students[3].printAnimal();
     }
 
 }

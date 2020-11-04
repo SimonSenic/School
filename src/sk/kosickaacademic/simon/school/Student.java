@@ -4,6 +4,10 @@ import sk.kosickaacademic.simon.school.hobbies.Book;
 import sk.kosickaacademic.simon.school.hobbies.Game;
 import sk.kosickaacademic.simon.school.hobbies.Hobby;
 import sk.kosickaacademic.simon.school.hobbies.Movie;
+import sk.kosickaacademic.simon.school.pets.Animal;
+import sk.kosickaacademic.simon.school.pets.Cat;
+import sk.kosickaacademic.simon.school.pets.Dog;
+import sk.kosickaacademic.simon.school.pets.Fish;
 
 import java.util.Date;
 
@@ -14,8 +18,8 @@ public class Student {
     private Grades grades;
     private Date date;
     private int payout;
-    private Hobby[] hobby;
-    private int countHobbies;
+    private Hobby[] hobby = new Hobby[5]; private int countHobbies;
+    private Animal.Pet animal;
 
     public Student(String fName, String lastName, ClassName className, Grades grades, Date date){
         firstName=fName;
@@ -39,13 +43,45 @@ public class Student {
             if(hobby[i] instanceof Book){
                 System.out.println(((Book)hobby[i]).getAuthor());
                 System.out.println(((Book)hobby[i]).getGenre());
+                System.out.println();
             }
             if(hobby[i] instanceof Movie){
                 System.out.println(((Movie)hobby[i]).getYear());
                 System.out.println(((Movie)hobby[i]).getDirector());
+                System.out.println();
             }
-            if(hobby[i] instanceof Game)
+            if(hobby[i] instanceof Game){
                 System.out.println(((Game)hobby[i]).getGenre());
+                System.out.println();
+            }
+        }
+    }
+
+    public void addAnimal(Animal.Pet animal){
+        if(animal==null){
+            System.out.println("No pets. ");
+            return;
+        }
+        this.animal=animal;
+    }
+
+    public void printAnimal(){
+        if(animal instanceof Dog){
+            System.out.println(((Dog)animal).getName());
+            System.out.println(((Dog)animal).getBreed());
+            System.out.println(((Dog)animal).getAge());
+            System.out.println();
+        }
+        if(animal instanceof Cat){
+            System.out.println(((Cat)animal).getName());
+            System.out.println(((Cat)animal).getBreed());
+            System.out.println(((Cat)animal).getAge());
+            System.out.println();
+        }
+        if(animal instanceof Fish){
+            System.out.println(((Fish)animal).getBreed());
+            System.out.println(((Fish)animal).getCount());
+            System.out.println();
         }
     }
 
@@ -71,10 +107,6 @@ public class Student {
 
     public int getPayout(){
         return payout;
-    }
-
-    public Hobby[] getHobby(){
-        return hobby;
     }
 
 }
